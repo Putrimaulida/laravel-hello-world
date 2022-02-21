@@ -13,15 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    echo ('Selamat Datang');
-});
+Route::get('/', [App\Http\Controllers\PageController::class, 'index']);
 
-Route::get('/about', function () {
-    echo ('NIM  : 2041720012 <br>');
-    echo ('Nama : Putri Maulida Sito Resmi');
-});
+Route::get('/about', [App\Http\Controllers\PageController::class, 'about']);
 
-Route::get('/article/{id}', function ($id='1') {
-    echo ('Halaman artikel dengan id '.$id);
-});
+Route::get('/article/{id}', [App\Http\Controllers\PageController::class, 'article']);
