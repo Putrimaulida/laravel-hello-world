@@ -7,32 +7,19 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        echo "<h1> Halaman Awal </h1>";
-        echo "Selamat Datang di Jurusan Teknologi Informasi Politeknik Negeri Malang";
-    }
-    public function d3mi(){
-        return "Halaman Website Program Studi D-III Manajemen Informatika";
-    }
-    public function d4ti(){
-        return "Halaman Website Program Studi D-IV Teknik Informatika";
+        echo "<h1> Educa Studio </h1>";
+        echo "Mari Belajar Sambil Bermain";
     }
     public function newsti($kbrti){
-        return "Halaman Berita " .$kbrti. " Jurusan Teknologi Informasi";
+        return "Halaman Berita " .$kbrti;
     }
     public function aboutus(){
-        return "About Us";
-    }
-    public function kantor(){
-        return "Halaman Website untuk Sarana Perkantoran Politeknik Negeri Malang";
-    }
-    public function kelas(){
-        return "Halaman Website untuk Sarana Kelas Politeknik Negeri Malang";
-    }
-    public function lab(){
-        return "Halaman Website untuk Sarana Laboratorium Politeknik Negeri Malang";
-    }
-    public function lain(){
-        return "Halaman Website untuk Sarana Lainnya Politeknik Negeri Malang";
+        echo "<h1> About Us </h1>";
+        echo "Sejarah Educa Studio <br>";
+        echo "Penghargaan <br>";
+        echo "Rilis Produk <br>";
+        echo "Hubungi Kami <br>";
+        echo "Media Sosial <br>";
     }
     public function comment($yourname, $yourmessages){
         return "Nama saya " .$yourname. " ,Pesan saya untuk Jurusan Teknologi Informasi adalah " .$yourmessages;

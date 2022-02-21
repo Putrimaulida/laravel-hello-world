@@ -21,29 +21,34 @@ Route::get('/article/{id}', [App\Http\Controllers\ArticleController::class, 'art
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
-Route::group(['prefix'=>'/program'], function () {
-    Route::get('/manajemen-informatika', function(){
-        echo 'DIII Manajemen Informatika';
+Route::group(['prefix'=>'/category'], function () {
+    Route::get('/marbel-edu-games', function(){
+        echo 'Marbel Premium <br>';
+        echo 'Marbel Piano<br>';
+        echo 'Marbel Teliti Mencari Perbedaan <br>';
     });
-    Route::get('/teknik-informatika', function(){
-        echo 'DIV Teknik Informatika';
+    Route::get('/marbel-and-friends-kids-games', function(){
+        echo 'Marbel Peternakan <br>';
+        echo 'Marbel Penyelamat Hewan <br>';
+        echo 'Marbel Polisi <br>';
     });   
 });
 
 Route::get('/news/{kbrti}', [App\Http\Controllers\HomeController::class, 'newsti']);
 
-Route::group(['prefix'=>'sarana'], function () {
-    Route::get('/perkantoran', function(){
-        echo 'Kantor Polinema';
+Route::group(['prefix'=>'program'], function () {
+    Route::get('/karir', function(){
+        echo 'Ilustrator <br>';
+        echo 'Trainer Bisnis dan Pemasaran <br>';
+        echo 'Fronted Developer <br>';
     });
-    Route::get('/kelas', function(){
-        echo 'Ruang Kelas Jurusan Teknologi Informasi';
+    Route::get('/magang', function(){
+        echo 'Magang Teknis <br>';
+        echo 'Magang Non-Teknis <br>';
     });
-    Route::get('/lab', function(){
-        echo 'Ruang Laboratorium';
-    });
-    Route::get('/lainnya', function(){
-        echo 'Lain';
+    Route::get('/kunjungan-industri', function(){
+        echo 'Kunjungan Industri: Tanggungjawab dan Tugas Seorang Programmer <br>';
+        echo 'Kunjungan Industri : Game, Animasi, dan Industri Kreatif';
     });
 });
 
