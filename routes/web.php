@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    echo ('NIM : 2041720012 <br>');
+    echo ('NIM  : 2041720012 <br>');
     echo ('Nama : Putri Maulida Sito Resmi');
 });
 
