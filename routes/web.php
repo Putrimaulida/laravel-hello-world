@@ -13,23 +13,41 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', [WelcomeController::class,'welcome']);
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
-Route::prefix('prodi')->group(function () {
-    Route::get('/manajemen-informatika', [WelcomeController::class, 'd3mi']);
-    Route::get('/teknik-informatika', [WelcomeController::class, 'd4ti']);  
+Route::get('/about', [App\Http\Controllers\AboutController::class, 'about']);
+
+Route::get('/article/{id}', [App\Http\Controllers\ArticleController::class, 'article']);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+
+Route::group(['prefix'=>'/program'], function () {
+    Route::get('/manajemen-informatika', function(){
+        echo 'DIII Manajemen Informatika';
+    });
+    Route::get('/teknik-informatika', function(){
+        echo 'DIV Teknik Informatika';
+    });   
 });
 
-Route::get('/news/{kbrti}', [WelcomeController::class, 'newsti']);
+Route::get('/news/{kbrti}', [App\Http\Controllers\HomeController::class, 'newsti']);
 
-Route::prefix('sarana')->group(function () {
-    Route::get('/perkantoran', [WelcomeController::class, 'kantor']);
-    Route::get('/kelas', [WelcomeController::class, 'kelas']);
-    Route::get('/laboratorium', [WelcomeController::class, 'lab']);
-    Route::get('/lainnya', [WelcomeController::class, 'lain']);
-
+Route::group(['prefix'=>'sarana'], function () {
+    Route::get('/perkantoran', function(){
+        echo 'Kantor Polinema';
+    });
+    Route::get('/kelas', function(){
+        echo 'Ruang Kelas Jurusan Teknologi Informasi';
+    });
+    Route::get('/lab', function(){
+        echo 'Ruang Laboratorium';
+    });
+    Route::get('/lainnya', function(){
+        echo 'Lain';
+    });
 });
 
-Route::get('/aboutus', [WelcomeController::class,'aboutus']);
+Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'aboutus']);
 
-Route::get('/comment/{yourname}/{yourmessages}', [WelcomeController::class, 'comment']);
+Route::get('/comment/{yourname}/{yourmessages}', [App\Http\Controllers\HomeController::class, 'comment']);
+
