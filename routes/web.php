@@ -12,8 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/home', function(){
+    return view('home');
+});
+/*Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 Route::get('/about', [App\Http\Controllers\AboutController::class, 'about']);
 
@@ -55,4 +57,9 @@ Route::group(['prefix'=>'program'], function () {
 Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'aboutus']);
 
 Route::get('/comment/{yourname}/{yourmessages}', [App\Http\Controllers\HomeController::class, 'comment']);
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');*/
 
