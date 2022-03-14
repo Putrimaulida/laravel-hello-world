@@ -13,7 +13,7 @@ class HomeSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('homes')->insert([
+        HomeSeeder::table('homes')->insert([
             'name' => 'PASTA CAPELLINI',
             'slug' => 'item1',
             'image' => 'thumb1',
@@ -23,7 +23,7 @@ class HomeSeeder extends Seeder
             'draft' => 0
         ]);
 
-        DB::table('homes')->insert([
+        HomeSeeder::table('homes')->insert([
             'name' => 'PASTA PILLUS',
             'slug' => 'item2',
             'image' => 'thumb2',
@@ -33,7 +33,7 @@ class HomeSeeder extends Seeder
             'draft' => 0
         ]);
 
-        DB::table('homes')->insert([
+        HomeSeeder::table('homes')->insert([
             'name' => 'PASTA FUSILLI',
             'slug' => 'item3',
             'image' => 'thumb3',
